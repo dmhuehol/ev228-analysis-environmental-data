@@ -1,6 +1,9 @@
 # ev228-analysis-environmental-data
 Code for EV228: Analysis of Environmental Data at Colorado College
 
+# Code Index
+* what_is_pdf: Explores fundamentals of creating and visualizing probability distribution functions.
+
 # Testing
 Code has been tested on Apple M4 Max.
 
