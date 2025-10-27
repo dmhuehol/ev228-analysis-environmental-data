@@ -2,6 +2,7 @@
 Code for EV228: Analysis of Environmental Data at Colorado College
 
 # Code Index
+* import-data: [Colab] Importing timeseries data and fundamentals of exploratory data analysis
 * probability: [Colab] Fundamentals of probability and coding using a virtual dice roller
 * statistical_moments: [Colab] Visualizing moments of a distribution with probability distribution functions
 * utensils_demo: Plots bar graph with utensils data from opening class
