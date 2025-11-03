@@ -13,7 +13,7 @@ da_t2m = ds_era5['t2m']
 
 #  Calculate a descriptive statistic on the data
 da_t2m_timestat = da_t2m.sum('valid_time')
-# print(da_t2m_timestat)
+print(da_t2m_timestat)
 
 #  Slice an index out of the data
 da_t2m_index = da_t2m.isel(valid_time=0)
