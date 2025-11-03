@@ -15,7 +15,7 @@ def timeseries(in_df, in_x=None, out_path='', out_name=''):
     plt.xlabel('years')
     plt.xlim(1887, 2025)
     plt.ylabel('annual temperature (deg C)')
-    plt.title('Raleigh-Durham Airport 1887-2025')
+    plt.title('ROE00108901 Sibiu, Romania 1880-2025')
     plt.savefig(out_path + out_name, dpi=400)
 
 def map(in_da, out_path='', out_name=''):
