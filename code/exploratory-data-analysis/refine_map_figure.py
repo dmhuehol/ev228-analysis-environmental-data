@@ -1,3 +1,5 @@
+import time
+
 from icecream import ic
 import matplotlib.pyplot as plt
 import numpy as np
@@ -11,7 +13,10 @@ fn = 'era5_t2m_1997-2025.nc'
 out_path = '/Users/danielhueholt/Documents/Figures/ev228_fig/20251104/'
 # out_fn = '3_era5.png'
 
+tic = time.time()
 da = fi.import_era5(file_path=path + fn, var='t2m')
+toc = time.time() - tic
+print(toc)
 da_timemn = da.mean(dim='valid_time')
 da_toplot = da_timemn - 273.15
 
