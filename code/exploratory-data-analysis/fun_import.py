@@ -9,11 +9,11 @@ import pandas as pd
 import xarray as xr
 
 
-def import_ghcn(file_path='', var=''):
-    ''' Import GHCN weather station data '''
+def import_csv_station(file_path='', var='', time_var=''):
+    ''' Import csv weather station data '''
     df = pd.read_csv(file_path)
     df_data = df[var]
-    df_yr = df['YEAR']
+    df_yr = df[time_var]
 
     return df_data, df_yr
 
