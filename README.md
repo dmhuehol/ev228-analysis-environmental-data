@@ -39,7 +39,7 @@ Some of these files overlap conceptually: for example, `wrap_map_cartopy` could 
 * `wrap_plot_anom`: Plot anomalies calculated through `wrap_calc_anom` for in-class demonstration
 
 # Testing
-Code has been tested on Apple M4 Max.
+Code has been tested on Apple M4 Max. The YML environment file assumes this platform and may not build successfully on others, particularly Windows or Intel OS X. Critical packages include `cartopy`, `icecream`, `matplotlib`, `numpy`, `pandas`, `scipy`, `xarray`, and their dependencies.
 
 # Credit
 Unless otherwise specified, code was written by [Daniel Hueholt](https://www.hueholt.earth). Code in this repository is available under an MIT License, included as the LICENSE file.
