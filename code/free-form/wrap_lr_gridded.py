@@ -1,3 +1,7 @@
+'''wrap_lr_gridded
+Demonstrate linear regression trend calculation on gridded data and contrast
+performance of loop-based and vectorized approaches.
+'''
 import sys
 import time
 
@@ -12,7 +16,7 @@ import fun_plots as fp
 tic = time.time()
 path = '/Users/danielhueholt/Data/ev228_data/gridded/'
 fn = 'era5_t2m_1997-2025.nc'
-out_path = '/Users/danielhueholt/Documents/Figures/ev228_fig/20251111/'
+out_path = '/Users/danielhueholt/Documents/Figures/ev228_fig/20251112/'
 out_fn = 'lr.png'
 
 da = fi.import_era5(file_path=path + fn, var='t2m')
@@ -26,6 +30,8 @@ r2 = r_value ** 2
 toc = time.time() - tic
 ic(toc)
 
+#  In-class: Based on the time for single lat/lon, how long will the loop below
+#      take to complete?
 # arr_lr = np.full(
 #     (len(da['longitude']), len(da['latitude'])), np.nan)
 # for lat in np.arange(0, len(da['latitude'])):
@@ -38,10 +44,9 @@ ic(toc)
 #         arr_lr[lon, lat] = slope_active
 # print(arr_lr)
 
-# ic(x_arbitrary, da)
-# sys.exit('STOP')
+#  Implement vectorized approach for linear regression
 x_arbitrary = np.arange(0, len(da_ll.valid_time.data))
-x_arbitrary = np.expand_dims(x_arbitrary, axis=[1,2])
+x_arbitrary = np.expand_dims(x_arbitrary, axis=[1, 2])
 tic = time.time()
 arr_lr_vec = fcv.calc_lin_reg_vec(x_arbitrary, np.squeeze(da))
 toc = time.time() - tic

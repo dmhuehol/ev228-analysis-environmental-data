@@ -1,4 +1,7 @@
-import sys
+'''wrap_calc_anom
+Demonstrate and profile annual z-score anomaly calculation from gridded monthly
+data.
+'''
 import time
 
 from icecream import ic
@@ -10,10 +13,12 @@ path = '/Users/danielhueholt/Data/ev228_data/gridded/'
 fn = 'era5_t2m_1997-2025.nc'
 out_fn = 'era5_t2m-anom-relative-19972025_1997-2025.nc'
 
+#  Calculate annual mean
 da = fi.import_era5(file_path=path + fn, var='t2m')
-#  Technically, we need to weight by day; omitting this step now for simplicity
+#  Technically, we need to weight by day; omit this step for simplicity
 da_ann = da[:-1].groupby("valid_time.year").mean()
 
+#  Calculate statistics
 da_mean_time = da_ann.mean(dim=['year'])
 da_stdev_time = da_ann.std(dim=['year'])
 da_anom = (da_ann - da_mean_time) / da_stdev_time

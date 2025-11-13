@@ -10,11 +10,11 @@ for font in fm.findSystemFonts(font_path):
     fm.fontManager.addfont(font)
 
 #  Enter names of people who chose each utensil here
-knife = ['owen', 'james']
-spoon = ['theo', 'eli']
-fork = ['avery', 'jordan', 'noah', 'julien', 'morgan']
-chopsticks = ['david',]
-tongs = ['daniel',]
+knife = []
+spoon = []
+fork = []
+chopsticks = []
+tongs = []
 ic(knife, spoon, fork, chopsticks, tongs)
 
 chosen_utensils = [

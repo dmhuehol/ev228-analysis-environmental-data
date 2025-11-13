@@ -1,11 +1,13 @@
+''' fun_calc_var 
+Examples of code to calculate variables for derived datasets.
+'''
+
 import numpy as np
 import xarray as xr
 
 def calc_lin_reg_vec(np_x, da_y):
-    ''' Calculate linear regression and retrieve coefficients in a
-    vectorized way. This saves massive amounts of time for
-    multidimensional data, such as large ensembles.
-    Derived from implementation at:
+    ''' Vectorized calculation of linear regression. Derived from 
+    implementation at:
     hrishichandanpurkar.blogspot.com/2017/09/vectorized-functions-for-correlation.html
     
     Arguments:
